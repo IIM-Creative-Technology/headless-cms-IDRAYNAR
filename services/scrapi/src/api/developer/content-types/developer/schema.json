@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developers",
+  "info": {
+    "singularName": "developer",
+    "pluralName": "developers",
+    "displayName": "Developers",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Experience": {
+      "type": "string",
+      "required": true
+    },
+    "Profil": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

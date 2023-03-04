@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Projects",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "developers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::developer.developer"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technologie.technologie"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "IIM",
+        "Entreprise",
+        "Personnel"
+      ],
+      "required": true
+    },
+    "Description": {
+      "type": "customField",
+      "options": {
+        "output": "Markdown",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
